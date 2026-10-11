@@ -25,7 +25,7 @@
             width: 100%;
             padding: 20px 50px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background-color: #1a1a1a;
             border-bottom: 3px solid #e60000;
@@ -40,19 +40,6 @@
             color: #e60000;
             letter-spacing: 2px;
             cursor: pointer;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 16px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        nav a:hover, nav a.active {
-            color: #e60000;
         }
 
         .page-section {
@@ -211,7 +198,7 @@
             font-size: 15px;
         }
 
-        /* بطاقة ملعب النادي في الواجهة الرئيسية */
+        /* بطاقة ملعب النادي */
         .stadium-card {
             background-color: #161616;
             border: 1px solid #333;
@@ -275,13 +262,24 @@
         /* تنسيقات الأقسام العامة */
         .section-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            width: 100%;
         }
 
         .section-header h2 {
             font-size: 32px;
             color: #e60000;
             margin-bottom: 10px;
+        }
+
+        .sub-section-title {
+            font-size: 24px;
+            color: #ffffff;
+            border-right: 4px solid #e60000;
+            padding-right: 15px;
+            margin: 40px 0 20px 0;
+            width: 100%;
+            text-align: right;
         }
 
         .titles-grid, .matches-grid, .squad-grid, .legends-grid, .fans-grid {
@@ -471,38 +469,12 @@
             width: 100%;
             border-top: 1px solid #222;
         }
-
-        @media(max-width: 768px) {
-            header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav {
-                display: flex;
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            nav a {
-                margin-right: 0;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo-text" onclick="showPage('home')">USMA 1937</div>
-        <nav>
-            <a href="#" onclick="showPage('home')" id="nav-home" class="active">الرئيسية</a>
-            <a href="#" onclick="showPage('titles')" id="nav-titles">ألقاب النادي</a>
-            <a href="#" onclick="showPage('legends')" id="nav-legends">أساطير النادي</a>
-            <a href="#" onclick="showPage('fans')" id="nav-fans">مجموعات الأنصار</a>
-            <a href="#" onclick="showPage('matches')" id="nav-matches">جدول المباريات</a>
-            <a href="#" onclick="showPage('squad')" id="nav-squad">تشكيلة الفريق</a>
-            <a href="https://instagram.com/jalil_jalil10.1" target="_blank">تواصل معنا</a>
-        </nav>
     </header>
 
     <!-- الصفحة الرئيسية -->
@@ -514,11 +486,8 @@
             <p class="subtitle">Les Rois d'Alger - ملوك العاصمة منذ 1937</p>
 
             <div class="btn-group">
-                <button class="btn btn-primary" onclick="showPage('titles')">ألقاب النادي</button>
-                <button class="btn btn-primary" onclick="showPage('legends')">أساطير النادي</button>
-                <button class="btn btn-primary" onclick="showPage('fans')">مجموعات الأنصار</button>
-                <button class="btn btn-primary" onclick="showPage('matches')">جدول المباريات</button>
-                <button class="btn btn-primary" onclick="showPage('squad')">تشكيلة الفريق</button>
+                <button class="btn btn-primary" onclick="showPage('explore')">🔍 استكشف النادي</button>
+                <button class="btn btn-primary" onclick="showPage('matches')">📅 جدول المباريات</button>
                 <a href="https://instagram.com/jalil_jalil10.1" target="_blank" class="btn btn-secondary">تواصل معي</a>
             </div>
 
@@ -567,117 +536,150 @@
         </div>
     </main>
 
-    <!-- واجهة ألقاب النادي -->
-    <main id="titles" class="page-section">
+    <!-- قسم استكشف النادي الشامل -->
+    <main id="explore" class="page-section">
         <div class="section-header">
-            <h2>خزانة ألقاب اتحاد العاصمة</h2>
-            <p style="color: #ccc;">سجل حافل بالبطولات والإنجازات التاريخية لملوك العاصمة</p>
+            <h2>🔍 استكشف نادي اتحاد العاصمة</h2>
+            <p style="color: #ccc;">دليل شامل لألقاب النادي، أساطيره، مجموعات أنصاره، وتشكيلته الحالية</p>
         </div>
 
+        <!-- 1. ألقاب النادي -->
+        <h3 class="sub-section-title">🏆 بطولات وألقاب النادي</h3>
         <div class="titles-grid">
             <div class="title-card">
                 <h3>كأس الجزائر <span>10 ألقاب</span></h3>
                 <p class="match-info">أعوام: 1981، 1988، 1997، 1999، 2001، 2003، 2004، 2013، 2025، 2026.</p>
             </div>
-
             <div class="title-card">
                 <h3>الرابطة المحترفة الأولى <span>8 ألقاب</span></h3>
                 <p class="match-info">أعوام: 1963، 1996، 2002، 2003، 2005، 2014، 2016، 2019.</p>
             </div>
-
             <div class="title-card">
                 <h3>كأس الكونفيدرالية الإفريقية <span>2 ألقاب</span></h3>
                 <p class="match-info">مواسم: 2022–23 و 2025–26.</p>
             </div>
-
             <div class="title-card">
                 <h3>كأس السوبر الإفريقي <span>لقب واحد</span></h3>
                 <p class="match-info">عام 2023 (أمام الأهلي المصري).</p>
             </div>
-
             <div class="title-card">
                 <h3>كأس السوبر الجزائري <span>2 ألقاب</span></h3>
                 <p class="match-info">أعوام: 2013، 2016.</p>
             </div>
-
             <div class="title-card">
                 <h3>كأس العرب للأندية الأبطال <span>لقب واحد</span></h3>
                 <p class="match-info">عام 2013.</p>
             </div>
         </div>
 
-        <button class="btn btn-secondary" onclick="showPage('home')" style="margin-top: 20px;">العودة للرئيسية</button>
-    </main>
-
-    <!-- واجهة أساطير اتحاد العاصمة -->
-    <main id="legends" class="page-section">
-        <div class="section-header">
-            <h2>أساطير اتحاد العاصمة</h2>
-            <p style="color: #ccc;">رموز ونجوم صنعوا أمجاد النادي عبر التاريخ</p>
-        </div>
-
+        <!-- 2. أساطير النادي -->
+        <h3 class="sub-section-title">⭐ أساطير ورموز النادي</h3>
         <div class="legends-grid">
             <div class="legend-card eternal">
                 <h3>بلال بن حمودة <span class="badge gold">الفقيد الخالد 🕊️</span></h3>
                 <p class="legend-desc">الموهبة الفذة، المايسترو الخلوق ومعشوق أنصار اتحاد العاصمة. رحل عنا إثر حادث مروري أليم صيف 2022، تاركاً خلفه أخلاقاً عالية وبصمات لا تُنسى وأهدافاً رائعة بقيت ذكراها خالدة أبد الدهر في قلوب عائلة سوسارة.</p>
             </div>
-
             <div class="legend-card">
                 <h3>جمال كدو <span class="badge">قائد أسطوري</span></h3>
                 <p class="legend-desc">مدافع وقائد أسطوري لاتحاد العاصمة في ثمانينيات القرن الماضي، قاد النادي لتحقيق أول لقب في كأس الجزائر عام 1981 وسجل أهدافاً تاريخية بقيت خالدة في أذهان أنصار سوسارة.</p>
             </div>
-
             <div class="legend-card">
                 <h3>محمد الأمين زماموش <span class="badge">الأكثر مشاركة</span></h3>
                 <p class="legend-desc">حارس المرمى الأسطوري وصاحب الرقم القياسي كأكثر من شارك بقميص الاتحاد بـ 400+ مباراة. توج مع النادي بالعديد من الألقاب المحلية والقارية وكان السد المنيع لسنوات طويلة.</p>
             </div>
-
             <div class="legend-card">
                 <h3>طارق حاج عدلان <span class="badge">الهداف التاريخي</span></h3>
                 <p class="legend-desc">واحد من أفضل المهاجمين في تاريخ الكرة الجزائرية والنادي، قاد الهجوم العاصمي لسنوات وسجل أهدافاً حاسمة جلب بها بطولات الدوري كأس الجزائر للاتحاد.</p>
             </div>
-
             <div class="legend-card">
                 <h3>نصر الدين خوالد <span class="badge">صخرة الدفاع</span></h3>
                 <p class="legend-desc">المدافع والقائد السابق الذي قضى أكثر من 12 موسماً متواصلاً مع الفريق، وكان رمزاً للوفاء والقتالية في الملعب، محققاً البطولات المحلية والعربية رفقة النادي.</p>
             </div>
-
             <div class="legend-card">
                 <h3>عمار عمور <span class="badge">المايسترو</span></h3>
                 <p class="legend-desc">صانع الألعاب الاستثنائي الذي أمتع جماهير بولوغين بلمساته السحرية وتميز في تسديد الكرات الثابتة، وقاد الفريق لسيطرة محلية مميزة في بداية الألفية.</p>
             </div>
         </div>
 
-        <button class="btn btn-secondary" onclick="showPage('home')" style="margin-top: 20px;">العودة للرئيسية</button>
-    </main>
-
-    <!-- واجهة المجموعات المشجعة للألتراس -->
-    <main id="fans" class="page-section">
-        <div class="section-header">
-            <h2>المجموعات المشجعة (أولاد البهجة)</h2>
-            <p style="color: #ccc;">صناع الأجواء الاستثنائية والأغاني التاريخية في المدرجات</p>
-        </div>
-
+        <!-- 3. مجموعات الأنصار -->
+        <h3 class="sub-section-title">📣 مجموعات الأنصار (أولاد البهجة)</h3>
         <div class="fans-grid">
             <div class="fan-card">
                 <h3>أولاد البهجة <span class="badge">Ouled El Bahdja</span></h3>
                 <p class="fan-desc">تعتبر العرّاب الأول والمصدر الأسطوري لأهازيج وأغاني مدرجات اتحاد العاصمة والكرة الجزائرية. أطلقت أشهر الأغاني التي تجاوزت حدود الرياضة لتصبح موروثاً شعبياً عاصمياً يتردد في كل مكان.</p>
             </div>
-
             <div class="fan-card">
                 <h3>ألجي أوفندر <span class="badge">Alger Offender</span></h3>
                 <p class="fan-desc">مجموعة الألتراس الشهيرة الملتزمة بدعم الفريق في جميع التنقلات داخل وخارج الجزائر، وتشتهر بتنظيم دخلات (التيفو) العبقرية و"الكراكاج" الناري الذي يزين مدرجات ملعب عمر حمادي و5 جويلية.</p>
             </div>
-
-            <!-- بطاقة المتحدون العاصميون مع خاصية الضغط لتكبير الصور -->
             <div class="fan-card clickable" onclick="openUnionistesModal()">
                 <h3>المتحدون العاصميون <span class="badge">Les Unionistes 🔍</span></h3>
                 <p class="fan-desc">تجمع من المشجعين الشغوفين المدافعين عن هوية وقيم النادي التاريخية، وتصنع لوحات وتشجيعات راقية تعكس الوفاء والحب الحقيقي لقميص الأحمر والأسود. <br><strong style="color: #e60000;">(اضغط هنا لمشاهدة الصور)</strong></p>
             </div>
-
             <div class="fan-card">
                 <h3>أنصار سوسارة <span class="badge">Soustara Fans</span></h3>
                 <p class="fan-desc">القاعدة الجماهيرية العريضة في حي سوسارة العريق وباب الوادي وقصبة الجزائر، والتي تشكل الروح الحقيقية لنادي اتحاد العاصمة وتنقل الشغف من جيل إلى جيل.</p>
+            </div>
+        </div>
+
+        <!-- 4. تشكيلة الفريق -->
+        <h3 class="sub-section-title">👕 تشكيلة الفريق واللاعبين</h3>
+        <div class="squad-grid">
+            <div class="squad-card">
+                <h3>الطاقم الفني <span class="badge">المدربين</span></h3>
+                <div class="squad-list">
+                    <ul>
+                        <li><span>المدرب الرئيسي: <strong>لامين ندياي (Lamine N'Diaye)</strong></span> ⚽</li>
+                        <li><span>مساعد المدرب: <strong>أرزقي رمان</strong></span> 📋</li>
+                        <li><span>مدرب الحراس: <strong>لمين الكاظم</strong></span> 🧤</li>
+                        <li><span>المعد البدني: <strong>كمال بوجنان</strong></span> 🏋️‍♂️</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="squad-card">
+                <h3>حراس المرمى <span class="badge">3 حراس</span></h3>
+                <div class="squad-list">
+                    <ul>
+                        <li><span>أسامة بنبوط</span> <span class="player-num">#25</span></li>
+                        <li><span>عبد المؤمن سيفور</span> <span class="player-num">#1</span></li>
+                        <li><span>كمال سوفي</span> <span class="player-num">#16</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="squad-card">
+                <h3>خط الدفاع <span class="badge">المدافعين</span></h3>
+                <div class="squad-list">
+                    <ul>
+                        <li><span>سعدي رضواني (القائد)</span> <span class="player-num">#19</span></li>
+                        <li><span>إلياس شتي</span> <span class="player-num">#23</span></li>
+                        <li><span>هيثم لوصيف</span> <span class="player-num">#12</span></li>
+                        <li><span>تشي مالون (Che Malone)</span> <span class="player-num">#4</span></li>
+                        <li><span>عماد الدين عزي</span> <span class="player-num">#5</span></li>
+                        <li><span>حسين دهيري</span> <span class="player-num">#13</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="squad-card">
+                <h3>خط الوسط <span class="badge">وسط الميدان</span></h3>
+                <div class="squad-list">
+                    <ul>
+                        <li><span>زكرياء دراوي</span> <span class="player-num">#6</span></li>
+                        <li><span>جلودي ليكونزا (Glody Likonza)</span> <span class="player-num">#11</span></li>
+                        <li><span>إسلام ميريلي</span> <span class="player-num">#8</span></li>
+                        <li><span>براهيم بن زازا</span> <span class="player-num">#14</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="squad-card">
+                <h3>خط الهجوم <span class="badge">المهاجمين</span></h3>
+                <div class="squad-list">
+                    <ul>
+                        <li><span>أحمد خالدي</span> <span class="player-num">#7</span></li>
+                        <li><span>رياض بن عياد</span> <span class="player-num">#9</span></li>
+                        <li><span>درامان كاماغاتي (Dramane Kamagaté)</span> <span class="player-num">#29</span></li>
+                        <li><span>حسام غشة</span> <span class="player-num">#27</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -1115,79 +1117,6 @@
         <button class="btn btn-secondary" onclick="showPage('home')" style="margin-top: 20px;">العودة للرئيسية</button>
     </main>
 
-    <!-- واجهة تشكيلة اللاعبين والمدربين -->
-    <main id="squad" class="page-section">
-        <div class="section-header">
-            <h2>تشكيلة اتحاد العاصمة</h2>
-            <p style="color: #ccc;">قائمة اللاعبين والطاقم الفني لملوك العاصمة</p>
-        </div>
-
-        <div class="squad-grid">
-            <div class="squad-card">
-                <h3>الطاقم الفني <span class="badge">المدربين</span></h3>
-                <div class="squad-list">
-                    <ul>
-                        <li><span>المدرب الرئيسي: <strong>لامين ندياي (Lamine N'Diaye)</strong></span> ⚽</li>
-                        <li><span>مساعد المدرب: <strong>أرزقي رمان</strong></span> 📋</li>
-                        <li><span>مدرب الحراس: <strong>لمين الكاظم</strong></span> 🧤</li>
-                        <li><span>المعد البدني: <strong>كمال بوجنان</strong></span> 🏋️‍♂️</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="squad-card">
-                <h3>حراس المرمى <span class="badge">3 حراس</span></h3>
-                <div class="squad-list">
-                    <ul>
-                        <li><span>أسامة بنبوط</span> <span class="player-num">#25</span></li>
-                        <li><span>عبد المؤمن سيفور</span> <span class="player-num">#1</span></li>
-                        <li><span>كمال سوفي</span> <span class="player-num">#16</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="squad-card">
-                <h3>خط الدفاع <span class="badge">المدافعين</span></h3>
-                <div class="squad-list">
-                    <ul>
-                        <li><span>سعدي رضواني (القائد)</span> <span class="player-num">#19</span></li>
-                        <li><span>إلياس شتي</span> <span class="player-num">#23</span></li>
-                        <li><span>هيثم لوصيف</span> <span class="player-num">#12</span></li>
-                        <li><span>تشي مالون (Che Malone)</span> <span class="player-num">#4</span></li>
-                        <li><span>عماد الدين عزي</span> <span class="player-num">#5</span></li>
-                        <li><span>حسين دهيري</span> <span class="player-num">#13</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="squad-card">
-                <h3>خط الوسط <span class="badge">وسط الميدان</span></h3>
-                <div class="squad-list">
-                    <ul>
-                        <li><span>زكرياء دراوي</span> <span class="player-num">#6</span></li>
-                        <li><span>جلودي ليكونزا (Glody Likonza)</span> <span class="player-num">#11</span></li>
-                        <li><span>إسلام ميريلي</span> <span class="player-num">#8</span></li>
-                        <li><span>براهيم بن زازا</span> <span class="player-num">#14</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="squad-card">
-                <h3>خط الهجوم <span class="badge">المهاجمين</span></h3>
-                <div class="squad-list">
-                    <ul>
-                        <li><span>أحمد خالدي</span> <span class="player-num">#7</span></li>
-                        <li><span>رياض بن عياد</span> <span class="player-num">#9</span></li>
-                        <li><span>درامان كاماغاتي (Dramane Kamagaté)</span> <span class="player-num">#29</span></li>
-                        <li><span>حسام غشة</span> <span class="player-num">#27</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <button class="btn btn-secondary" onclick="showPage('home')" style="margin-top: 20px;">العودة للرئيسية</button>
-    </main>
-
     <footer>
         تصميم ومطوَّر بواسطة <strong>جليل</strong> | جميع الحقوق محفوظة © 2026
     </footer>
@@ -1198,25 +1127,7 @@
                 section.classList.remove('active');
             });
 
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
-            });
-
             document.getElementById(pageId).classList.add('active');
-
-            if (pageId === 'home') {
-                document.getElementById('nav-home').classList.add('active');
-            } else if (pageId === 'titles') {
-                document.getElementById('nav-titles').classList.add('active');
-            } else if (pageId === 'legends') {
-                document.getElementById('nav-legends').classList.add('active');
-            } else if (pageId === 'fans') {
-                document.getElementById('nav-fans').classList.add('active');
-            } else if (pageId === 'matches') {
-                document.getElementById('nav-matches').classList.add('active');
-            } else if (pageId === 'squad') {
-                document.getElementById('nav-squad').classList.add('active');
-            }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
